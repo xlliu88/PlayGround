@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec 14 18:13:04 2016
+
+@author: xunliangliu
+"""
+
+from random import randint
+i=0
+while i<1000:
+    x = randint(0,7)
+    print (x)
+    i+=1

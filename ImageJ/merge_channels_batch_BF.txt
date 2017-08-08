@@ -1,0 +1,48 @@
+//This is a ImageJ script to merge YFP (in Green), mCherry (in Magenta), and BrightField channels
+//the target folder should be organized in thus a way that,
+//     1. there're only images of three individule channels
+//     2. ch00 = YFP channel (in green); 
+//        ch01 = mCherry channel (in Magenta); 
+//        ch02 = BrightField Channel (in gray)
+// output file name will be ended with "_BFmerged.tif"
+// Xunliang Liu
+// xlliu88@gmail.com
+// Aug 16th, 2016
+
+
+path = getDirectory("Choose a Directory"); //select the target folder
+list = getFileList(path);                  //list all files in the target folder
+
+for (i=0; i<list.length; i+=3) {
+    Yname = File.getName(path+list[i]);     //Get file name of YFP channel image 
+      y0 = Yname + " (red)";                //designate y0 as the splited "red" channel
+      y1 = Yname + " (green)";
+      y2 = Yname + " (blue)";
+    Rname = File.getName(path+list[i+1]);   //Get file name of Red channel image (mCherry/DsRed)
+      r0 = Rname + " (red)";                //designate r0 as the splited "red" channel
+      r1 = Rname + " (green)";
+      r2 = Rname + " (blue)";
+    Bname = File.getName(path+list[i+2]);   //Get file name of Red channel image (mCherry/DsRed)
+      b0 = Bname + " (red)";                //designate b0 as the splited "red" channel
+      b1 = Bname + " (green)"; 
+      b2 = Bname + " (blue)";
+    nameArray = split(Yname,"_") ;
+      name = "";
+      for (j=0;j<nameArray.length-1;j++) {
+              name = name + nameArray[j]; }
+    
+    open(path+list[i]);                      //open and split YFP channel image
+    run("Split Channels");
+    open(path+list[i+1]);                    //open and split Red channel image
+    run("Split Channels");
+    open(path + list[i+2]);                //open and split Bright Field channel image
+    run("Split Channels");
+
+    option = "c1=[" + r0 + "] c2=[" + y1 + "] c3=[" + r2 + "] c4=[" + b0 + "] keep"; //set the channels intended to be merged
+   // print (option);
+    run("Merge Channels...", option);                                                //merge channels
+   // waitForUser("wait") ;
+    saveAs("Tiff", path + name + "_BFmerged.tif");                                   //save merged image as TIFF file
+    run("Close All");
+
+}
