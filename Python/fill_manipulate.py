@@ -8,3 +8,6 @@ import os
 import glob
 
 os.chdir("L:\MitchumLab\Individual Lab Folders\XunliangLiu")
+
+for f in os.walk('.')
+	print(f)
