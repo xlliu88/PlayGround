@@ -21,6 +21,12 @@ def fib2(n):
         f.append(f[i-1] + f[i-2])
         
     return f, f[n]
+def fib3(n):
+    f = list()
+    a,b = 0,1
+    while a < n:
+        f.append(a)
+        a, b = b, a+b
 
 def eff_test(n):
 
@@ -40,7 +46,7 @@ def eff_test(n):
 x = fib1(10)
 y = fib2(10)
 
-eff_test(40)
+eff_test(20)
 
 fib, fibn = fib2(100000)
 fib
