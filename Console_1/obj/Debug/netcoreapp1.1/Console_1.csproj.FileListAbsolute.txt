@@ -1,0 +1,8 @@
+C:\Users\xunliangliu\Google Drive\PlayGround\Console_1\bin\Debug\netcoreapp1.1\Console_1.deps.json
+C:\Users\xunliangliu\Google Drive\PlayGround\Console_1\bin\Debug\netcoreapp1.1\Console_1.runtimeconfig.json
+C:\Users\xunliangliu\Google Drive\PlayGround\Console_1\bin\Debug\netcoreapp1.1\Console_1.runtimeconfig.dev.json
+C:\Users\xunliangliu\Google Drive\PlayGround\Console_1\bin\Debug\netcoreapp1.1\Console_1.dll
+C:\Users\xunliangliu\Google Drive\PlayGround\Console_1\bin\Debug\netcoreapp1.1\Console_1.pdb
+C:\Users\xunliangliu\Google Drive\PlayGround\Console_1\obj\Debug\netcoreapp1.1\Console_1.AssemblyInfo.cs
+C:\Users\xunliangliu\Google Drive\PlayGround\Console_1\obj\Debug\netcoreapp1.1\Console_1.dll
+C:\Users\xunliangliu\Google Drive\PlayGround\Console_1\obj\Debug\netcoreapp1.1\Console_1.pdb
